@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201903270807130_CreateInitial.Designer.cs">
       <DependentUpon>201903270807130_CreateInitial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904010913212_AddLogoToAgency.cs" />
+    <Compile Include="Migrations\201904010913212_AddLogoToAgency.Designer.cs">
+      <DependentUpon>201904010913212_AddLogoToAgency.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
@@ -205,6 +209,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Logos\brown-circle-and-chocolate-coffee.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -313,6 +318,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903270807130_CreateInitial.resx">
       <DependentUpon>201903270807130_CreateInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904010913212_AddLogoToAgency.resx">
+      <DependentUpon>201904010913212_AddLogoToAgency.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
