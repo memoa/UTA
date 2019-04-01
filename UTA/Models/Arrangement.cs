@@ -10,6 +10,10 @@ namespace UTA.Models {
 
     [Required]
     [StringLength(50)]
-    public string Name { get; set; }
+    public string Destination { get; set; }
+
+    [Required]
+    [StringLength(50)]
+    public string Picture { get; set; }
   }
 }

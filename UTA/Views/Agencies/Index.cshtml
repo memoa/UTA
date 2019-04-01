@@ -1,31 +1,13 @@
-﻿@model IEnumerable<UTA.Models.Agency>
+﻿@model IEnumerable<UTA.ViewModels.AgencyViewModel>
 
 @{
   ViewBag.Title = "Turističke Agencije";
 }
 
 <h2 class="m-2">Turističke Agencije</h2>
-<!--
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach (var agency in Model) {
-    <tr>
-      <td>@agency.Id</td>
-      <td>@agency.Name</td>
-    </tr>
-    }
-  </tbody>
-</table>
--->
+
 <div class="d-flex">
   @foreach (var agency in Model) {
-
     <div class="card m-2" style="width: 18rem;">
       <img src="~/Content/Logos/@agency.Logo" class="card-img-top" alt="...">
       <div class="card-body">

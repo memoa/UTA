@@ -4,11 +4,9 @@ using System.Linq;
 using System.Web;
 
 namespace UTA.ViewModels {
-  public class AgenciesViewModel {
+  public class ArrangementViewModel {
     public int Id { get; set; }
-
-    public string Name { get; set; }
-
-    public string Logo { get; set; }
+    public string Destination { get; set; }
+    public string Picture { get; set; }
   }
 }
