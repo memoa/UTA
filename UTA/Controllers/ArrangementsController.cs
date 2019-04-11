@@ -32,5 +32,14 @@ namespace UTA.Controllers {
 
       return View(arrangementsVm);
     }
+
+    public ActionResult Details(int id) {
+      var arrangement = _context.Arrangements.SingleOrDefault(a => a.Id == id);
+
+      if (arrangement == null)
+        return HttpNotFound();
+
+      return View(arrangement);
+    }
   }
 }

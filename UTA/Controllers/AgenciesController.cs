@@ -32,5 +32,14 @@ namespace UTA.Controllers {
 
       return View(agenciesVm);
     }
+
+    public ActionResult Details(int id) {
+      var agency = _context.Agencies.SingleOrDefault(a => a.Id == id);
+
+      if (agency == null)
+        return HttpNotFound();
+
+      return View(agency);
+    }
   }
 }

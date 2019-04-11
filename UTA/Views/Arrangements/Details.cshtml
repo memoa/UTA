@@ -1,0 +1,10 @@
+﻿@model UTA.Models.Arrangement
+
+@{
+    ViewBag.Title = Model.Destination;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">@Model.Destination</h2>
+
+<img src="~/Content/Logos/@Model.Picture" class="img-fluid" alt="Responsive image">
