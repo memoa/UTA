@@ -1,4 +1,4 @@
-﻿@model IEnumerable<UTA.ViewModels.ArrangementViewModel>
+﻿@model IEnumerable<UTA.Models.Arrangement>
 
 @{
     ViewBag.Title = "Aranžmani";
@@ -9,9 +9,9 @@
 <div class="d-flex">
   @foreach (var arrangement in Model) {
     <div class="card m-2" style="width: 18rem;">
-      <img src="~/Content/Logos/@arrangement.Picture" class="card-img-top" alt="...">
+      <img src="~/Content/Logos/@arrangement.Destination.Picture" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">@arrangement.Destination</h5>
+        <h5 class="card-title">@arrangement.Destination.Place</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         @Html.ActionLink("Detalji", "Details", new { id = arrangement.Id }, new { @class = "btn btn-primary" })
       </div>

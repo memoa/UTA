@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using UTA.Models;
 using UTA.ViewModels;
+using System.Data.Entity;
 
 namespace UTA.Controllers {
   public class ArrangementsController : Controller {
@@ -16,8 +17,8 @@ namespace UTA.Controllers {
 
     // GET: Arrangements
     public ActionResult Index() {
-      var arrangements = _context.Arrangements.ToList();
-
+      var arrangements = _context.Arrangements.Include(a => a.Destination).ToList();
+      /*
       var arrangementsVm = new List<ArrangementViewModel>();
 
       foreach (var arrangement in arrangements) {
@@ -29,12 +30,12 @@ namespace UTA.Controllers {
 
         arrangementsVm.Add(arrangementVm);
       }
-
-      return View(arrangementsVm);
+      */
+      return View(arrangements);
     }
 
     public ActionResult Details(int id) {
-      var arrangement = _context.Arrangements.SingleOrDefault(a => a.Id == id);
+      var arrangement = _context.Arrangements.Include(a => a.Destination).SingleOrDefault(a => a.Id == id);
 
       if (arrangement == null)
         return HttpNotFound();

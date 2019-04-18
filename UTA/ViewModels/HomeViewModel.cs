@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using UTA.Models;
 
 namespace UTA.ViewModels {
   public class HomeViewModel {
     public List<AgencyViewModel> Agencies;
-    public List<ArrangementViewModel> Arrangements;
+    public List<Arrangement> Arrangements;
   }
 }

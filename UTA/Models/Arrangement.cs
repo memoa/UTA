@@ -8,12 +8,8 @@ namespace UTA.Models {
   public class Arrangement {
     public int Id { get; set; }
 
-    [Required]
-    [StringLength(50)]
-    public string Destination { get; set; }
+    public Destination Destination { get; set; }
 
-    [Required]
-    [StringLength(50)]
-    public string Picture { get; set; }
+    public int DestinationId { get; set; }
   }
 }

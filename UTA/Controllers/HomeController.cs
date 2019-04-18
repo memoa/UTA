@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using UTA.Models;
 using UTA.ViewModels;
+using System.Data.Entity;
 
 namespace UTA.Controllers {
   public class HomeController : Controller {
@@ -16,11 +17,11 @@ namespace UTA.Controllers {
 
     public ActionResult Index() {
       var agencies = _context.Agencies.ToList();
-      var arrangements = _context.Arrangements.ToList();
+      var arrangements = _context.Arrangements.Include(a => a.Destination).ToList();
 
       HomeViewModel homeVm = new HomeViewModel {
         Agencies = new List<AgencyViewModel>(),
-        Arrangements = new List<ArrangementViewModel>()
+        Arrangements = arrangements
       };
 
       foreach (var agency in agencies) {
@@ -32,7 +33,7 @@ namespace UTA.Controllers {
 
         homeVm.Agencies.Add(agencyVm);
       }
-
+      /*
       foreach (var arrangement in arrangements) {
         var arrangementVm = new ArrangementViewModel {
           Id = arrangement.Id,
@@ -42,7 +43,7 @@ namespace UTA.Controllers {
 
         homeVm.Arrangements.Add(arrangementVm);
       }
-
+      */
       return View(homeVm);
     }
 
