@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UTA</RootNamespace>
     <AssemblyName>UTA</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,16 +51,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -104,6 +103,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -195,12 +195,21 @@
     <Compile Include="Migrations\201904011021350_AddPictureToArrangementAndChangeNameColumnToDestination.Designer.cs">
       <DependentUpon>201904011021350_AddPictureToArrangementAndChangeNameColumnToDestination.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904181110055_AddDestinationModel.cs" />
+    <Compile Include="Migrations\201904181110055_AddDestinationModel.Designer.cs">
+      <DependentUpon>201904181110055_AddDestinationModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904181113520_AddDestinationModel1.cs" />
+    <Compile Include="Migrations\201904181113520_AddDestinationModel1.Designer.cs">
+      <DependentUpon>201904181113520_AddDestinationModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Arrangement.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -333,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904011021350_AddPictureToArrangementAndChangeNameColumnToDestination.resx">
       <DependentUpon>201904011021350_AddPictureToArrangementAndChangeNameColumnToDestination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181110055_AddDestinationModel.resx">
+      <DependentUpon>201904181110055_AddDestinationModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181113520_AddDestinationModel1.resx">
+      <DependentUpon>201904181113520_AddDestinationModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

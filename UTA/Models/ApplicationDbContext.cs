@@ -9,6 +9,7 @@ namespace UTA.Models {
   public class ApplicationDbContext : IdentityDbContext<ApplicationUser> {
     public DbSet<Agency> Agencies { get; set; }
     public DbSet<Arrangement> Arrangements { get; set; }
+    public DbSet<Destination> Destinations { get; set; }
 
     /*
     protected override void OnModelCreating(DbModelBuilder modelBuilder) {
@@ -16,7 +17,7 @@ namespace UTA.Models {
     }
     */
 
-    
+
 
     public ApplicationDbContext()
         : base("DefaultConnection", throwIfV1Schema: false) {
