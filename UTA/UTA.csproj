@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201904181113520_AddDestinationModel1.Designer.cs">
       <DependentUpon>201904181113520_AddDestinationModel1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904181117359_FillDestinationsTable.cs" />
+    <Compile Include="Migrations\201904181117359_FillDestinationsTable.Designer.cs">
+      <DependentUpon>201904181117359_FillDestinationsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
@@ -348,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904181113520_AddDestinationModel1.resx">
       <DependentUpon>201904181113520_AddDestinationModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181117359_FillDestinationsTable.resx">
+      <DependentUpon>201904181117359_FillDestinationsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
