@@ -11,5 +11,27 @@ namespace UTA.Models {
     public Destination Destination { get; set; }
 
     public int DestinationId { get; set; }
+
+    [Required]
+    [StringLength(1000)]
+    public string Description { get; set; }
+
+    public ArrangementType ArrangementType { get; set; }
+
+    public int ArrangementTypeId { get; set; }
+
+    public TransportationType TransportationType { get; set; }
+
+    public int TransportationTypeId { get; set; }
+
+    public Service Service { get; set; }
+
+    public int ServiceId { get; set; }
+
+    public int StayDays { get; set; }
+
+    public int StayNights { get; set; }
+
+    public int Price { get; set; }
   }
 }
