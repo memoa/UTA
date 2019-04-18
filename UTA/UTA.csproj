@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201904181222218_AddArrangementTypeModel.Designer.cs">
       <DependentUpon>201904181222218_AddArrangementTypeModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904181235423_AddTransportationTypeModel.cs" />
+    <Compile Include="Migrations\201904181235423_AddTransportationTypeModel.Designer.cs">
+      <DependentUpon>201904181235423_AddTransportationTypeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
@@ -224,6 +228,7 @@
     <Compile Include="Models\ArrangementType.cs" />
     <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TransportationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AgencyViewModel.cs" />
@@ -370,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904181222218_AddArrangementTypeModel.resx">
       <DependentUpon>201904181222218_AddArrangementTypeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181235423_AddTransportationTypeModel.resx">
+      <DependentUpon>201904181235423_AddTransportationTypeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
