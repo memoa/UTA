@@ -10,7 +10,7 @@ namespace UTA.Models {
     public DbSet<Agency> Agencies { get; set; }
     public DbSet<Arrangement> Arrangements { get; set; }
     public DbSet<Destination> Destinations { get; set; }
-
+    public DbSet<ArrangementType> ArrangementTypes { get; set; }
     /*
     protected override void OnModelCreating(DbModelBuilder modelBuilder) {
       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

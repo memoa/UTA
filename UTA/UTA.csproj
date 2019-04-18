@@ -211,12 +211,17 @@
     <Compile Include="Migrations\201904181133589_ModifyArrangementModel.Designer.cs">
       <DependentUpon>201904181133589_ModifyArrangementModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904181222218_AddArrangementTypeModel.cs" />
+    <Compile Include="Migrations\201904181222218_AddArrangementTypeModel.Designer.cs">
+      <DependentUpon>201904181222218_AddArrangementTypeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Arrangement.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ArrangementType.cs" />
     <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -362,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904181133589_ModifyArrangementModel.resx">
       <DependentUpon>201904181133589_ModifyArrangementModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181222218_AddArrangementTypeModel.resx">
+      <DependentUpon>201904181222218_AddArrangementTypeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
