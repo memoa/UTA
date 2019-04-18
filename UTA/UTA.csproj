@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201904181235423_AddTransportationTypeModel.Designer.cs">
       <DependentUpon>201904181235423_AddTransportationTypeModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904181251490_AddServiceModel.cs" />
+    <Compile Include="Migrations\201904181251490_AddServiceModel.Designer.cs">
+      <DependentUpon>201904181251490_AddServiceModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
@@ -228,6 +232,7 @@
     <Compile Include="Models\ArrangementType.cs" />
     <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="Models\TransportationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -378,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904181235423_AddTransportationTypeModel.resx">
       <DependentUpon>201904181235423_AddTransportationTypeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181251490_AddServiceModel.resx">
+      <DependentUpon>201904181251490_AddServiceModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

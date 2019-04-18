@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace UTA.Models {
-  public class Service {
+namespace UTA.Models
+{
+  public class Service
+  {
     public int Id { get; set; }
 
     [Required]
