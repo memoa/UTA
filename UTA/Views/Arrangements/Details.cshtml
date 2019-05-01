@@ -7,4 +7,41 @@
 
 <h2 class="m-2">@Model.Destination.Place</h2>
 
-<img src="~/Content/Logos/@Model.Destination.Picture" class="img-fluid" alt="Responsive image">
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <img src="~/Content/Logos/@Model.Destination.Picture" class="card-img" alt="...">
+    </div>
+    <div class="col-md-4">
+      <div class="row no-gutters m-2">
+        <h1>@Model.StayDays</h1> days.
+      </div>
+      <div class="row no-gutters m-2">
+        <h1>@Model.StayNights</h1> nights.
+      </div>
+      <div class="row no-gutters m-2">
+        <h1>$@Model.Price</h1>
+      </div>
+    </div>
+    <div class="row no-gutters container m-2">
+      <div class="col text-center">
+        <h6>Tip aranžmana</h6>
+        <p>@Model.ArrangementType.Name</p>
+      </div>
+      <div class="col text-center">
+        <h6>Usluga</h6>
+        <p>@Model.Service.Name</p>
+      </div>
+      <div class="col text-center">
+        <h6>Prevoz</h6>
+        <p>@Model.TransportationType.Name</p>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="card-body">
+        <h5 class="card-title">Opis aranžmana</h5>
+        <p class="card-text">@Model.Description</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,7 +35,12 @@ namespace UTA.Controllers {
     }
 
     public ActionResult Details(int id) {
-      var arrangement = _context.Arrangements.Include(a => a.Destination).SingleOrDefault(a => a.Id == id);
+      var arrangement = _context.Arrangements
+        .Include(a => a.Destination)
+        .Include(a => a.ArrangementType)
+        .Include(a => a.Service)
+        .Include(a => a.TransportationType)
+        .SingleOrDefault(a => a.Id == id);
 
       if (arrangement == null)
         return HttpNotFound();
