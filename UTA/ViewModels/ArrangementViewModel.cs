@@ -28,5 +28,22 @@ namespace UTA.ViewModels {
     public int StayNights { get; set; }
     [Display(Name = "Cena")]
     public int Price { get; set; }
+
+    public ArrangementViewModel()
+    {
+      Id = 0;
+    }
+    public ArrangementViewModel(Arrangement arrangement)
+    {
+      Id = arrangement.Id;
+      DestinationId = arrangement.DestinationId;
+      Description = arrangement.Description;
+      ArrangementTypeId = arrangement.ArrangementTypeId;
+      TransportationTypeId = arrangement.TransportationTypeId;
+      ServiceId = arrangement.ServiceId;
+      StayDays = arrangement.StayDays;
+      StayNights = arrangement.StayNights;
+      Price = arrangement.Price;
+    }
   }
 }

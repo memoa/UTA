@@ -41,5 +41,6 @@
     @Html.LabelFor(a => a.Price)
     @Html.TextBoxFor(a => a.Price, "", new { @class = "form-control" })
   </div>
+  @Html.HiddenFor(a => a.Id)
   <button type="submit" class="btn btn-primary">Sačuvaj</button>
 }
