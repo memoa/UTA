@@ -345,6 +345,7 @@
     <Content Include="Views\Arrangements\Index.cshtml" />
     <Content Include="Views\Arrangements\Details.cshtml" />
     <Content Include="Views\Agencies\Details.cshtml" />
+    <Content Include="Views\Arrangements\ArrangementForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -47,5 +47,22 @@ namespace UTA.Controllers {
 
       return View(arrangement);
     }
+
+    public ActionResult New()
+    {
+      var destinations = _context.Destinations.ToList();
+      var arrangementTypes = _context.ArrangementTypes.ToList();
+      var transportationTypes = _context.TransportationTypes.ToList();
+      var services = _context.Services.ToList();
+
+      var arrangementVM = new ArrangementViewModel {
+        Destinations = destinations,
+        ArrangementTypes = arrangementTypes,
+        TransportationTypes = transportationTypes,
+        Services = services
+      };
+
+      return View("ArrangementForm", arrangementVM);
+    }
   }
 }
