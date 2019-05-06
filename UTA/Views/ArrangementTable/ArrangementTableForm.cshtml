@@ -1,0 +1,59 @@
+﻿@model UTA.ViewModels.ArrangementViewModel
+
+@{
+  ViewBag.Title = "Uredi Aranžman";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Uredi Aranžman</h2>
+
+@using (Html.BeginForm("Save", "ArrangementTable"))
+{
+  <div class="form-group">
+    @Html.LabelFor(a => a.DestinationId)
+    @Html.DropDownListFor(a => a.DestinationId, new SelectList(Model.Destinations, "Id", "Id"), "Izaberite Id destinacije", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.DestinationId)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.Description)
+    @Html.TextBoxFor(a => a.Description, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.Description)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.ArrangementTypeId)
+    @Html.DropDownListFor(a => a.ArrangementTypeId, new SelectList(Model.ArrangementTypes, "Id", "Id"), "Izaberite Id tipa aranžmana", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.ArrangementTypeId)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.TransportationTypeId)
+    @Html.DropDownListFor(a => a.TransportationTypeId, new SelectList(Model.TransportationTypes, "Id", "Id"), "Izaberite Id prevoza", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.TransportationTypeId)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.ServiceId)
+    @Html.DropDownListFor(a => a.ServiceId, new SelectList(Model.Services, "Id", "Id"), "Izaberite Id usluge", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.ServiceId)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.StayDays)
+    @Html.TextBoxFor(a => a.StayDays, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.StayDays)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.StayNights)
+    @Html.TextBoxFor(a => a.StayNights, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.StayNights)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.Price)
+    @Html.TextBoxFor(a => a.Price, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.Price)
+  </div>
+  @Html.HiddenFor(a => a.Id)
+  @Html.AntiForgeryToken()
+  <button type="submit" class="btn btn-primary">Sačuvaj</button>
+}
+
+@section scripts {
+  @Scripts.Render("~/Bundles/jqueryval")
+}
