@@ -19,22 +19,6 @@
         <li class="nav-item">@Html.ActionLink("Agencije", "Index", "Agencies", new { area = "" }, new { @class = "nav-link" })</li>
         <li class="nav-item">@Html.ActionLink("Aranzmani", "Index", "Arrangements", new { area = "" }, new { @class = "nav-link" })</li>
         <li class="nav-item">@Html.ActionLink("O Nama", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-        <li class="nav-item">
-          <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Baza podataka
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              @Html.ActionLink("Agencije", "Index", "AgencyTable", new { area = "" }, new { @class = "dropdown-item" })
-              @Html.ActionLink("Aranžmani", "Index", "ArrangementTable", new { area = "" }, new { @class = "dropdown-item" })
-              @Html.ActionLink("Destinacije", "Index", "DestinationTable", new { area = "" }, new { @class = "dropdown-item" })
-              @Html.ActionLink("Tipovi aranžmana", "Index", "ArrangementTypeTable", new { area = "" }, new { @class = "dropdown-item" })
-              @Html.ActionLink("Vrste prevoza", "Index", "TransportationTypeTable", new { area = "" }, new { @class = "dropdown-item" })
-              @Html.ActionLink("Usluge", "Index", "ServiceTable", new { area = "" }, new { @class = "dropdown-item" })
-            </div>
-          </div>
-        </li>
       </ul>
       @Html.Partial("_LoginPartial")
     </div>

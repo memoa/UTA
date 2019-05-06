@@ -41,20 +41,20 @@ namespace UTA.Models
 
     public class ChangePasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Ovo polje je obavezno!")]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Stara lozinka")]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Ovo polje je obavezno!")]
+        [StringLength(100, ErrorMessage = "Lozinka mora imati najmanje {2} karaktera!", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Nova lozinka")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Potvrdite novu lozinku")]
+        [Compare("NewPassword", ErrorMessage = "Nova lozinka nije potvđena!")]
         public string ConfirmPassword { get; set; }
     }
 

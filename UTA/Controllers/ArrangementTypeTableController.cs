@@ -7,6 +7,7 @@ using UTA.Models;
 
 namespace UTA.Controllers
 {
+  [Authorize]
   public class ArrangementTypeTableController : Controller
   {
     private ApplicationDbContext _context;

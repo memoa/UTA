@@ -7,6 +7,7 @@ using UTA.Models;
 
 namespace UTA.Controllers
 {
+  [Authorize]
   public class TransportationTypeTableController : Controller
   {
     private ApplicationDbContext _context;

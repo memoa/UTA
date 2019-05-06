@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UTA.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace UTA.Controllers
 {
+  [Authorize]
   public class AgencyTableController : Controller
   {
     private ApplicationDbContext _context;

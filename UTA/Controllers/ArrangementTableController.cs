@@ -9,6 +9,7 @@ using System.Data.Entity;
 
 namespace UTA.Controllers
 {
+  [Authorize]
   public class ArrangementTableController : Controller
   {
     private ApplicationDbContext _context;
