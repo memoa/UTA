@@ -179,6 +179,7 @@
     <Compile Include="Controllers\AgenciesController.cs" />
     <Compile Include="Controllers\ArrangementsController.cs" />
     <Compile Include="Controllers\ArrangementTableController.cs" />
+    <Compile Include="Controllers\ArrangementTypeTableController.cs" />
     <Compile Include="Controllers\DestinationController.cs" />
     <Compile Include="Controllers\DestinationTableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -353,6 +354,8 @@
     <Content Include="Views\ArrangementTable\ArrangementTableForm.cshtml" />
     <Content Include="Views\DestinationTable\Index.cshtml" />
     <Content Include="Views\DestinationTable\DestinationTableForm.cshtml" />
+    <Content Include="Views\ArrangementTypeTable\Index.cshtml" />
+    <Content Include="Views\ArrangementTypeTable\ArrangementTypeTableForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

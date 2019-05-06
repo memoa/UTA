@@ -1,0 +1,30 @@
+﻿@model IEnumerable<UTA.Models.ArrangementType>
+
+@{
+  ViewBag.Title = "Tabela Tipova Aranžmana";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Tabela Tipova Aranžmana</h2>
+
+@Html.ActionLink("Novi tip aranžmana", "New", "ArrangementTypeTable", new { area = "" }, new { @class = "btn btn-primary m-2" })
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Tip aranžmana</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var arrangementType in Model)
+    {
+      <tr>
+        <th scope="row">@arrangementType.Id</th>
+        <td>@arrangementType.Name</td>
+        <td>@Html.ActionLink("Uredi", "Edit", "ArrangementTypeTable", new { area = "", id = arrangementType.Id }, new { @class = "btn btn-primary" })</td>
+        <td>@Html.ActionLink("Obriši", "Delete", "ArrangementTypeTable", new { area = "", id = arrangementType.Id }, new { @class = "btn btn-primary" })</td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿@model UTA.Models.ArrangementType
+
+@{
+  ViewBag.Title = "Uredi Tip Aranžmana";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Uredi Tip Aranžmana</h2>
+
+@using (Html.BeginForm("Save", "ArrangementTypeTable"))
+{
+  <div class="form-group">
+    @Html.LabelFor(d => d.Name)
+    @Html.TextBoxFor(d => d.Name, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(d => d.Name)
+  </div>
+  @Html.HiddenFor(d => d.Id)
+  @Html.AntiForgeryToken()
+  <button type="submit" class="btn btn-primary">Sačuvaj</button>
+}
+
+@section scripts {
+  @Scripts.Render("~/Bundles/jqueryval")
+}
