@@ -31,7 +31,7 @@
       <th scope="row">@arrangement.Id</th>
       <td>@Html.ActionLink(arrangement.AgencyId.ToString(), "Edit", "AgencyTable", new { area = "", id = arrangement.AgencyId }, new { @class = "btn btn-primary" })</td>
       <td>@Html.ActionLink(arrangement.DestinationId.ToString(), "Edit", "DestinationTable", new { area = "", id = arrangement.DestinationId }, new { @class = "btn btn-primary" })</td>
-      <td>@arrangement.Description</td>
+      <td>@arrangement.Description.Substring(0, 50) ...</td>
       <td>@Html.ActionLink(arrangement.ArrangementTypeId.ToString(), "Edit", "ArrangementTypeTable", new { area = "", id = arrangement.ArrangementTypeId }, new { @class = "btn btn-primary" })</td>
       <td>@Html.ActionLink(arrangement.TransportationTypeId.ToString(), "Edit", "TransportationTypeTable", new { area = "", id = arrangement.TransportationTypeId }, new { @class = "btn btn-primary" })</td>
       <td>@Html.ActionLink(arrangement.ServiceId.ToString(), "Edit", "ServiceTable", new { area = "", id = arrangement.ServiceId }, new { @class = "btn btn-primary" })</td>

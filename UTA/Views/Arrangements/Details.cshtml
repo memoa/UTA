@@ -10,17 +10,17 @@
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row no-gutters">
     <div class="col-md-8">
-      <img src="~/Content/Logos/@Model.Destination.Picture" class="card-img" alt="...">
+      <img src="~/Content/Images/@Model.Destination.Picture" class="card-img" alt="...">
     </div>
     <div class="col-md-4">
       <div class="row no-gutters m-2">
-        <h1>@Model.StayDays</h1> days.
+        <h1>@Model.StayDays</h1> dana
       </div>
       <div class="row no-gutters m-2">
-        <h1>@Model.StayNights</h1> nights.
+        <h1>@Model.StayNights</h1> noćenja
       </div>
       <div class="row no-gutters m-2">
-        <h1>$@Model.Price</h1>
+        <h1>@Model.Price€</h1>
       </div>
     </div>
     <div class="row no-gutters container m-2">
@@ -36,6 +36,9 @@
         <h6>Prevoz</h6>
         <p>@Model.TransportationType.Name</p>
       </div>
+    </div>
+    <div class="row no-gutters">
+      @Html.ActionLink(Model.Agency.Name, "Details", "Agencies", new { area = "", id = Model.Agency.Id }, new { @class = "btn btn-primary m-2" })
     </div>
     <div class="row no-gutters">
       <div class="card-body">

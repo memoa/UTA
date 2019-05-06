@@ -17,7 +17,7 @@ namespace UTA.Models {
     public int DestinationId { get; set; }
 
     [Required]
-    [StringLength(1000)]
+    [StringLength(5000)]
     public string Description { get; set; }
 
     public ArrangementType ArrangementType { get; set; }

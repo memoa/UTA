@@ -17,7 +17,9 @@ namespace UTA.Controllers {
 
     public ActionResult Index() {
       var agencies = _context.Agencies.ToList();
-      var arrangements = _context.Arrangements.Include(a => a.Destination).ToList();
+      var arrangements = _context.Arrangements
+        .Include(a => a.Destination)
+        .Include(a => a.Agency).ToList();
 
       HomeViewModel homeVm = new HomeViewModel {
         Agencies = new List<AgencyViewModel>(),
