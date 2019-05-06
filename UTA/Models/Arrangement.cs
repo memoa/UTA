@@ -28,10 +28,13 @@ namespace UTA.Models {
 
     public int ServiceId { get; set; }
 
+    [Range(1, 30)]
     public int StayDays { get; set; }
 
+    [Range(0, 30)]
     public int StayNights { get; set; }
 
+    [Range(1, 10000)]
     public int Price { get; set; }
   }
 }

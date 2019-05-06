@@ -10,16 +10,19 @@ namespace UTA.Models
   {
     public int Id { get; set; }
 
-    [Required]
-    [StringLength(50)]
+    [Display(Name = "Mesto")]
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [StringLength(50, ErrorMessage = "Mora biti uneto manje od 50 karaktera!")]
     public string Place { get; set; }
 
-    [Required]
-    [StringLength(50)]
+    [Display(Name = "Država")]
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [StringLength(50, ErrorMessage = "Mora biti uneto manje od 50 karaktera!")]
     public string Country { get; set; }
 
-    [Required]
-    [StringLength(50)]
+    [Display(Name = "Slika")]
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [StringLength(50, ErrorMessage = "Mora biti uneto manje od 50 karaktera!")]
     public string Picture { get; set; }
   }
 }

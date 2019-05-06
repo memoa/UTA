@@ -11,36 +11,53 @@
 {
   <div class="form-group">
     @Html.LabelFor(a => a.DestinationId)
-    @Html.DropDownListFor(a => a.DestinationId, new SelectList(Model.Destinations, "Id", "Place"), "", new { @class = "form-control" })
+    <div>
+      @Html.DropDownListFor(a => a.DestinationId, new SelectList(Model.Destinations, "Id", "Place"), "Izaberite destinaciju", new { @class = "form-control float-left", id = ""})
+      @Html.ActionLink("Nova Destinacija", "New", "Destination", null, new { @class = "btn btn-secondary float-left ml-2" })
+      @Html.ActionLink("Uredi Destinaciju", "Edit", "Destination", new { id = 1 }, new { @class = "btn btn-secondary ml-2" })
+    </div>
+    @Html.ValidationMessageFor(a => a.DestinationId)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.Description)
     @Html.TextBoxFor(a => a.Description, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.Description)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.ArrangementTypeId)
-    @Html.DropDownListFor(a => a.ArrangementTypeId, new SelectList(Model.ArrangementTypes, "Id", "Name"), "", new { @class = "form-control" })
+    @Html.DropDownListFor(a => a.ArrangementTypeId, new SelectList(Model.ArrangementTypes, "Id", "Name"), "Izaberite tip aranžmana", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.ArrangementTypeId)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.TransportationTypeId)
-    @Html.DropDownListFor(a => a.TransportationTypeId, new SelectList(Model.TransportationTypes, "Id", "Name"), "", new { @class = "form-control" })
+    @Html.DropDownListFor(a => a.TransportationTypeId, new SelectList(Model.TransportationTypes, "Id", "Name"), "Izaberite prevoz", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.TransportationTypeId)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.ServiceId)
-    @Html.DropDownListFor(a => a.ServiceId, new SelectList(Model.Services, "Id", "Name"), "", new { @class = "form-control" })
+    @Html.DropDownListFor(a => a.ServiceId, new SelectList(Model.Services, "Id", "Name"), "Izaberite uslugu", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.ServiceId)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.StayDays)
     @Html.TextBoxFor(a => a.StayDays, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.StayDays)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.StayNights)
     @Html.TextBoxFor(a => a.StayNights, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.StayNights)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.Price)
     @Html.TextBoxFor(a => a.Price, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.Price)
   </div>
   @Html.HiddenFor(a => a.Id)
+  @Html.AntiForgeryToken()
   <button type="submit" class="btn btn-primary">Sačuvaj</button>
+}
+
+@section scripts {
+  @Scripts.Render("~/Bundles/jqueryval")
 }
