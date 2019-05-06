@@ -10,6 +10,11 @@
 @using (Html.BeginForm("Save", "ArrangementTable"))
 {
   <div class="form-group">
+    @Html.LabelFor(a => a.AgencyId)
+    @Html.DropDownListFor(a => a.AgencyId, new SelectList(Model.Agencies, "Id", "Id"), "Izaberite Id agencije", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.AgencyId)
+  </div>
+  <div class="form-group">
     @Html.LabelFor(a => a.DestinationId)
     @Html.DropDownListFor(a => a.DestinationId, new SelectList(Model.Destinations, "Id", "Id"), "Izaberite Id destinacije", new { @class = "form-control" })
     @Html.ValidationMessageFor(a => a.DestinationId)

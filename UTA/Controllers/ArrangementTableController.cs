@@ -31,6 +31,7 @@ namespace UTA.Controllers
     {
       var arrangementVM = new ArrangementViewModel
       {
+        Agencies = _context.Agencies.ToList(),
         Destinations = _context.Destinations.ToList(),
         ArrangementTypes = _context.ArrangementTypes.ToList(),
         TransportationTypes = _context.TransportationTypes.ToList(),
@@ -49,6 +50,7 @@ namespace UTA.Controllers
 
       var arrangementVM = new ArrangementViewModel(arrangement)
       {
+        Agencies = _context.Agencies.ToList(),
         Destinations = _context.Destinations.ToList(),
         ArrangementTypes = _context.ArrangementTypes.ToList(),
         TransportationTypes = _context.TransportationTypes.ToList(),
@@ -66,6 +68,7 @@ namespace UTA.Controllers
       {
         var arrangementVM = new ArrangementViewModel(arrangement)
         {
+          Agencies = _context.Agencies.ToList(),
           Destinations = _context.Destinations.ToList(),
           ArrangementTypes = _context.ArrangementTypes.ToList(),
           TransportationTypes = _context.TransportationTypes.ToList(),
@@ -81,6 +84,7 @@ namespace UTA.Controllers
       {
         var arrangementInDb = _context.Arrangements.Single(a => a.Id == arrangement.Id);
 
+        arrangementInDb.AgencyId = arrangement.AgencyId;
         arrangementInDb.DestinationId = arrangement.DestinationId;
         arrangementInDb.Description = arrangement.Description;
         arrangementInDb.ArrangementTypeId = arrangement.ArrangementTypeId;

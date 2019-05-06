@@ -7,11 +7,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UTA.ViewModels {
   public class ArrangementViewModel {
+    public IEnumerable<Agency> Agencies { get; set; }
     public IEnumerable<Destination> Destinations { get; set; }
     public IEnumerable<ArrangementType> ArrangementTypes { get; set; }
     public IEnumerable<TransportationType> TransportationTypes { get; set; }
     public IEnumerable<Service> Services { get; set; }
     public int Id { get; set; }
+
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [Display(Name = "Agencija")]
+    public int AgencyId { get; set; }
 
     [Required(ErrorMessage = "Ovo polje je obavezno!")]
     [Display(Name = "Destinacija")]

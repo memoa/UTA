@@ -8,6 +8,10 @@ namespace UTA.Models {
   public class Arrangement {
     public int Id { get; set; }
 
+    public Agency Agency { get; set; }
+
+    public int AgencyId { get; set; }
+
     public Destination Destination { get; set; }
 
     public int DestinationId { get; set; }

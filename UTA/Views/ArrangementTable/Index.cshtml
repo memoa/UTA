@@ -13,6 +13,7 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
+      <th scope="col">Id agencije</th>
       <th scope="col">Id destinacije</th>
       <th scope="col">Opis aranžmana</th>
       <th scope="col">Id tipa aranžmana</th>
@@ -28,6 +29,7 @@
     {
     <tr>
       <th scope="row">@arrangement.Id</th>
+      <td>@Html.ActionLink(arrangement.AgencyId.ToString(), "Edit", "AgencyTable", new { area = "", id = arrangement.AgencyId }, new { @class = "btn btn-primary" })</td>
       <td>@Html.ActionLink(arrangement.DestinationId.ToString(), "Edit", "DestinationTable", new { area = "", id = arrangement.DestinationId }, new { @class = "btn btn-primary" })</td>
       <td>@arrangement.Description</td>
       <td>@Html.ActionLink(arrangement.ArrangementTypeId.ToString(), "Edit", "ArrangementTypeTable", new { area = "", id = arrangement.ArrangementTypeId }, new { @class = "btn btn-primary" })</td>
