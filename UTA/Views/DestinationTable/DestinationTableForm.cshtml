@@ -1,0 +1,34 @@
+﻿@model UTA.Models.Destination
+
+@{
+  ViewBag.Title = "Uredi Destinaciju";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Uredi Destinaciju</h2>
+
+@using (Html.BeginForm("Save", "DestinationTable"))
+{
+  <div class="form-group">
+    @Html.LabelFor(d => d.Place)
+    @Html.TextBoxFor(d => d.Place, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(d => d.Place)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(d => d.Country)
+    @Html.TextBoxFor(d => d.Country, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(d => d.Country)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(d => d.Picture)
+    @Html.TextBoxFor(d => d.Picture, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(d => d.Picture)
+  </div>
+  @Html.HiddenFor(d => d.Id)
+  @Html.AntiForgeryToken()
+  <button type="submit" class="btn btn-primary">Sačuvaj</button>
+}
+
+@section scripts {
+  @Scripts.Render("~/Bundles/jqueryval")
+}

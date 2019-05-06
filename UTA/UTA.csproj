@@ -180,6 +180,7 @@
     <Compile Include="Controllers\ArrangementsController.cs" />
     <Compile Include="Controllers\ArrangementTableController.cs" />
     <Compile Include="Controllers\DestinationController.cs" />
+    <Compile Include="Controllers\DestinationTableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -350,6 +351,8 @@
     <Content Include="Views\Destination\DestinationForm.cshtml" />
     <Content Include="Views\ArrangementTable\Index.cshtml" />
     <Content Include="Views\ArrangementTable\ArrangementTableForm.cshtml" />
+    <Content Include="Views\DestinationTable\Index.cshtml" />
+    <Content Include="Views\DestinationTable\DestinationTableForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
