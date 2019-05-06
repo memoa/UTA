@@ -10,8 +10,9 @@ namespace UTA.Models
   {
     public int Id { get; set; }
 
-    [Required]
-    [StringLength(50)]
+    [Display(Name = "Usluga")]
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [StringLength(50, ErrorMessage = "Dozvoljeno je maksimalno 50 karaktera!")]
     public string Name { get; set; }
   }
 }

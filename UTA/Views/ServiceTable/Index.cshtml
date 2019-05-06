@@ -1,0 +1,30 @@
+﻿@model IEnumerable<UTA.Models.Service>
+
+@{
+  ViewBag.Title = "Tabela Usluga";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Tabela Usluga</h2>
+
+@Html.ActionLink("Nova usluga", "New", "ServiceTable", new { area = "" }, new { @class = "btn btn-primary m-2" })
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Usluga</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var service in Model)
+    {
+      <tr>
+        <th scope="row">@service.Id</th>
+        <td>@service.Name</td>
+        <td>@Html.ActionLink("Uredi", "Edit", "ServiceTable", new { area = "", id = service.Id }, new { @class = "btn btn-primary" })</td>
+        <td>@Html.ActionLink("Obriši", "Delete", "ServiceTable", new { area = "", id = service.Id }, new { @class = "btn btn-primary" })</td>
+      </tr>
+    }
+  </tbody>
+</table>

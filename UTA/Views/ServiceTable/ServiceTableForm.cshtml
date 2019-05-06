@@ -1,0 +1,24 @@
+﻿@model UTA.Models.Service
+
+@{
+  ViewBag.Title = "Uredi Uslugu";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Uredi Uslugu</h2>
+
+@using (Html.BeginForm("Save", "ServiceTable"))
+{
+  <div class="form-group">
+    @Html.LabelFor(d => d.Name)
+    @Html.TextBoxFor(d => d.Name, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(d => d.Name)
+  </div>
+  @Html.HiddenFor(d => d.Id)
+  @Html.AntiForgeryToken()
+  <button type="submit" class="btn btn-primary">Sačuvaj</button>
+}
+
+@section scripts {
+  @Scripts.Render("~/Bundles/jqueryval")
+}
