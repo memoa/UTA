@@ -184,6 +184,7 @@
     <Compile Include="Controllers\DestinationTableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TransportationTypeTableController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -356,6 +357,8 @@
     <Content Include="Views\DestinationTable\DestinationTableForm.cshtml" />
     <Content Include="Views\ArrangementTypeTable\Index.cshtml" />
     <Content Include="Views\ArrangementTypeTable\ArrangementTypeTableForm.cshtml" />
+    <Content Include="Views\TransportationTypeTable\Index.cshtml" />
+    <Content Include="Views\TransportationTypeTable\TransportationTypeTableForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
