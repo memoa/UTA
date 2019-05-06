@@ -177,6 +177,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AgenciesController.cs" />
+    <Compile Include="Controllers\AgencyTableController.cs" />
     <Compile Include="Controllers\ArrangementsController.cs" />
     <Compile Include="Controllers\ArrangementTableController.cs" />
     <Compile Include="Controllers\ArrangementTypeTableController.cs" />
@@ -362,6 +363,8 @@
     <Content Include="Views\TransportationTypeTable\TransportationTypeTableForm.cshtml" />
     <Content Include="Views\ServiceTable\Index.cshtml" />
     <Content Include="Views\ServiceTable\ServiceTableForm.cshtml" />
+    <Content Include="Views\AgencyTable\Index.cshtml" />
+    <Content Include="Views\AgencyTable\AgencyTableForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

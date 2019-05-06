@@ -1,0 +1,32 @@
+﻿@model IEnumerable<UTA.Models.Agency>
+
+@{
+  ViewBag.Title = "Tabela Agencija";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Tabela Agencija</h2>
+
+@Html.ActionLink("Nova Agencija", "New", "AgencyTable", new { area = "" }, new { @class = "btn btn-primary m-2" })
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Agencija</th>
+      <th scope="col">Logo</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var agency in Model)
+    {
+      <tr>
+        <th scope="row">@agency.Id</th>
+        <td>@agency.Name</td>
+        <td>@agency.Logo</td>
+        <td>@Html.ActionLink("Uredi", "Edit", "AgencyTable", new { area = "", id = agency.Id }, new { @class = "btn btn-primary" })</td>
+        <td>@Html.ActionLink("Obriši", "Delete", "AgencyTable", new { area = "", id = agency.Id }, new { @class = "btn btn-primary" })</td>
+      </tr>
+    }
+  </tbody>
+</table>
