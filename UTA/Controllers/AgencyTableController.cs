@@ -43,6 +43,8 @@ namespace UTA.Controllers
       return View("AgencyTableForm", agency);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public ActionResult Save(Agency agency)
     {
       if (!ModelState.IsValid)
@@ -62,6 +64,7 @@ namespace UTA.Controllers
 
       return RedirectToAction("Index", "AgencyTable");
     }
+
     public ActionResult Delete(int id)
     {
       var agency = _context.Agencies.SingleOrDefault(a => a.Id == id);

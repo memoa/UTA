@@ -42,6 +42,8 @@ namespace UTA.Controllers
       return View("ServiceTableForm", service);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public ActionResult Save(Service service)
     {
       if (!ModelState.IsValid)
@@ -60,6 +62,7 @@ namespace UTA.Controllers
 
       return RedirectToAction("Index", "ServiceTable");
     }
+
     public ActionResult Delete(int id)
     {
       var service = _context.Services.SingleOrDefault(a => a.Id == id);

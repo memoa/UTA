@@ -43,6 +43,8 @@ namespace UTA.Controllers
       return View("DestinationTableForm", destination);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public ActionResult Save(Destination destination)
     {
       if (!ModelState.IsValid)

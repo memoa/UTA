@@ -42,6 +42,8 @@ namespace UTA.Controllers
       return View("TransportationTypeTableForm", transportationType);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public ActionResult Save(TransportationType transportationType)
     {
       if (!ModelState.IsValid)
@@ -60,6 +62,7 @@ namespace UTA.Controllers
 
       return RedirectToAction("Index", "TransportationTypeTable");
     }
+
     public ActionResult Delete(int id)
     {
       var transportationType = _context.TransportationTypes.SingleOrDefault(a => a.Id == id);

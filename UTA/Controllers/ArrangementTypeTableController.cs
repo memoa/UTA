@@ -42,6 +42,8 @@ namespace UTA.Controllers
       return View("ArrangementTypeTableForm", arrangementType);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public ActionResult Save(ArrangementType arrangementType)
     {
       if (!ModelState.IsValid)
@@ -60,6 +62,7 @@ namespace UTA.Controllers
 
       return RedirectToAction("Index", "ArrangementTypeTable");
     }
+
     public ActionResult Delete(int id)
     {
       var arrangementType = _context.ArrangementTypes.SingleOrDefault(a => a.Id == id);
