@@ -29,14 +29,28 @@ namespace UTA.Controllers {
         .Include(a => a.Agency)
         .Include(a => a.Destination)
         .Include(a => a.ArrangementType)
-        .Include(a => a.Service)
-        .Include(a => a.TransportationType)
         .SingleOrDefault(a => a.Id == id);
 
       if (arrangement == null)
         return HttpNotFound();
 
-      return View(arrangement);
+      var transportationTypes = _context.TransportationTypes.ToList();
+      var services = _context.Services.ToList();
+
+      var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
+      var arrangementServices = _context.ArrangementServices.ToList();
+
+      var arrangementVM = new ArrangementViewModel(arrangement)
+      {
+        TransportationTypes = arrangementTransportationTypes
+          .Where(art => art.ArrangementId == arrangement.Id)
+          .Select(art => transportationTypes.SingleOrDefault(t => t.Id == art.TransportationTypeId)).ToList(),
+        Services = arrangementServices
+          .Where(ars => ars.ArrangementId == arrangement.Id)
+          .Select(ars => services.SingleOrDefault(s => s.Id == ars.ServiceId)).ToList()
+      };
+
+      return View(arrangementVM);
     }
   }
 }

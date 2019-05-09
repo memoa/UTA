@@ -241,12 +241,22 @@
     <Compile Include="Migrations\201905061815152_UpdateDescriptionInArrangement.Designer.cs">
       <DependentUpon>201905061815152_UpdateDescriptionInArrangement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905081458291_RemoveTransportationTypesAndServicesFromArrangements.cs" />
+    <Compile Include="Migrations\201905081458291_RemoveTransportationTypesAndServicesFromArrangements.Designer.cs">
+      <DependentUpon>201905081458291_RemoveTransportationTypesAndServicesFromArrangements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.cs" />
+    <Compile Include="Migrations\201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.Designer.cs">
+      <DependentUpon>201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Arrangement.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ArrangementService.cs" />
+    <Compile Include="Models\ArrangementTransportationType.cs" />
     <Compile Include="Models\ArrangementType.cs" />
     <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -434,6 +444,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905061815152_UpdateDescriptionInArrangement.resx">
       <DependentUpon>201905061815152_UpdateDescriptionInArrangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081458291_RemoveTransportationTypesAndServicesFromArrangements.resx">
+      <DependentUpon>201905081458291_RemoveTransportationTypesAndServicesFromArrangements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.resx">
+      <DependentUpon>201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,14 +24,6 @@ namespace UTA.Models {
 
     public int ArrangementTypeId { get; set; }
 
-    public TransportationType TransportationType { get; set; }
-
-    public int TransportationTypeId { get; set; }
-
-    public Service Service { get; set; }
-
-    public int ServiceId { get; set; }
-
     [Range(1, 30)]
     public int StayDays { get; set; }
 

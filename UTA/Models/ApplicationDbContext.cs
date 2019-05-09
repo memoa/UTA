@@ -12,8 +12,9 @@ namespace UTA.Models {
     public DbSet<Destination> Destinations { get; set; }
     public DbSet<ArrangementType> ArrangementTypes { get; set; }
     public DbSet<TransportationType> TransportationTypes { get; set; }
-
     public DbSet<Service> Services { get; set; }
+    public DbSet<ArrangementTransportationType> ArrangementTransportationTypes { get; set; }
+    public DbSet<ArrangementService> ArrangementServices { get; set; }
     /*
     protected override void OnModelCreating(DbModelBuilder modelBuilder) {
       modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
