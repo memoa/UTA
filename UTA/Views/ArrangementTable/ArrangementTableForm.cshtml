@@ -1,4 +1,4 @@
-﻿@model UTA.ViewModels.ArrangementViewModel
+﻿@model UTA.ViewModels.ArrangementTableFormViewModel
 
 @{
   ViewBag.Title = "Uredi Aranžman";
@@ -30,14 +30,14 @@
     @Html.ValidationMessageFor(a => a.ArrangementTypeId)
   </div>
   <div class="form-group">
-    @Html.LabelFor(a => a.TransportationTypeId)
-    @Html.DropDownListFor(a => a.TransportationTypeId, new SelectList(Model.TransportationTypes, "Id", "Id"), "Izaberite Id prevoza", new { @class = "form-control" })
-    @Html.ValidationMessageFor(a => a.TransportationTypeId)
+    @Html.LabelFor(a => a.TransportationTypeIds)
+    @Html.DropDownListFor(a => a.TransportationTypeIds, new SelectList(Model.TransportationTypes, "Id", "Id"), "Izaberite Id prevoza", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.TransportationTypeIds)
   </div>
   <div class="form-group">
-    @Html.LabelFor(a => a.ServiceId)
-    @Html.DropDownListFor(a => a.ServiceId, new SelectList(Model.Services, "Id", "Id"), "Izaberite Id usluge", new { @class = "form-control" })
-    @Html.ValidationMessageFor(a => a.ServiceId)
+    @Html.LabelFor(a => a.ServiceIds)
+    @Html.DropDownListFor(a => a.ServiceIds, new SelectList(Model.Services, "Id", "Id"), "Izaberite Id usluge", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.ServiceIds)
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.StayDays)

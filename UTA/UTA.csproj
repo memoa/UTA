@@ -265,6 +265,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AgencyViewModel.cs" />
+    <Compile Include="ViewModels\ArrangementTableFormViewModel.cs" />
     <Compile Include="ViewModels\ArrangementViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>

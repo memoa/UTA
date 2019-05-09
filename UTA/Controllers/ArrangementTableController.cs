@@ -22,22 +22,54 @@ namespace UTA.Controllers
     // GET: ArrangementTable
     public ActionResult Index()
     {
-      var arrangements = _context.Arrangements.ToList();
+      var arrangements = _context.Arrangements
+        .Include(a => a.Agency)
+        .Include(a => a.Destination)
+        .Include(a => a.ArrangementType).ToList();
 
-      return View(arrangements);
+      var transportationTypes = _context.TransportationTypes.ToList();
+      var services = _context.Services.ToList();
+
+      var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
+      var arrangementServices = _context.ArrangementServices.ToList();
+
+      var arrangementVMs = new List<ArrangementTableFormViewModel>();
+
+      foreach (var arrangement in arrangements)
+      {
+        var arrangementVM = new ArrangementTableFormViewModel(arrangement)
+        {
+          TransportationTypes = arrangementTransportationTypes
+            .Where(art => art.ArrangementId == arrangement.Id)
+            .Select(art => transportationTypes.SingleOrDefault(t => t.Id == art.TransportationTypeId)).ToList(),
+          Services = arrangementServices
+            .Where(ars => ars.ArrangementId == arrangement.Id)
+            .Select(ars => services.SingleOrDefault(s => s.Id == ars.ServiceId)).ToList()
+        };
+        arrangementVMs.Add(arrangementVM);
+      }
+
+      return View(arrangementVMs);
     }
 
     public ActionResult New()
     {
-      var arrangementVM = new ArrangementViewModel
+      var arrangement = new Arrangement();
+
+      var transportationTypes = _context.TransportationTypes.ToList();
+      var services = _context.Services.ToList();
+
+      var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
+      var arrangementServices = _context.ArrangementServices.ToList();
+
+      var arrangementVM = new ArrangementTableFormViewModel(arrangement)
       {
-        /*
-        Agencies = _context.Agencies.ToList(),
-        Destinations = _context.Destinations.ToList(),
-        ArrangementTypes = _context.ArrangementTypes.ToList(),
-        */
-        TransportationTypes = _context.TransportationTypes.ToList(),
-        Services = _context.Services.ToList()
+        TransportationTypes = arrangementTransportationTypes
+          .Where(art => art.ArrangementId == arrangement.Id)
+          .Select(art => transportationTypes.SingleOrDefault(t => t.Id == art.TransportationTypeId)).ToList(),
+        Services = arrangementServices
+          .Where(ars => ars.ArrangementId == arrangement.Id)
+          .Select(ars => services.SingleOrDefault(s => s.Id == ars.ServiceId)).ToList()
       };
 
       return View("ArrangementTableForm", arrangementVM);
@@ -56,7 +88,7 @@ namespace UTA.Controllers
       var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
       var arrangementServices = _context.ArrangementServices.ToList();
 
-      var arrangementVM = new ArrangementViewModel(arrangement)
+      var arrangementVM = new ArrangementTableFormViewModel(arrangement)
       {
         TransportationTypes = arrangementTransportationTypes
           .Where(art => art.ArrangementId == arrangement.Id)
@@ -81,7 +113,7 @@ namespace UTA.Controllers
         var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
         var arrangementServices = _context.ArrangementServices.ToList();
 
-        var arrangementVM = new ArrangementViewModel(arrangement)
+        var arrangementVM = new ArrangementTableFormViewModel(arrangement)
         {
           TransportationTypes = arrangementTransportationTypes
             .Where(art => art.ArrangementId == arrangement.Id)
