@@ -9,24 +9,30 @@ namespace UTA.ViewModels
 {
   public class ArrangementTableFormViewModel
   {
-    public Agency Agency { get; set; }
-    public Destination Destination { get; set; }
-    public ArrangementType ArrangementType { get; set; }
+    public IEnumerable<Agency> Agencies { get; set; }
+    public IEnumerable<Destination> Destinations { get; set; }
+    public IEnumerable<ArrangementType> ArrangementTypes { get; set; }
     public IEnumerable<TransportationType> TransportationTypes { get; set; }
     public IEnumerable<Service> Services { get; set; }
     public int Id { get; set; }
 
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [Display(Name = "Agencija")]
     public int AgencyId { get; set; }
 
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [Display(Name = "Destinacija")]
     public int DestinationId { get; set; }
 
     [Required(ErrorMessage = "Ovo polje je obavezno!")]
     [Display(Name = "Opis Aranžmana")]
     public string Description { get; set; }
 
+    [Required(ErrorMessage = "Ovo polje je obavezno!")]
+    [Display(Name = "Tip aranžmana")]
     public int ArrangementTypeId { get; set; }
 
-    public IEnumerable<int> TransportationTypeIds { get; set; }
+    public IEnumerable<int> TransporationTypeIds { get; set; }
 
     public IEnumerable<int> ServiceIds { get; set; }
 
@@ -53,10 +59,12 @@ namespace UTA.ViewModels
     public ArrangementTableFormViewModel(Arrangement arrangement)
     {
       Id = arrangement.Id;
-      Agency = arrangement.Agency;
-      Destination = arrangement.Destination;
+      AgencyId = arrangement.AgencyId;
+      DestinationId = arrangement.DestinationId;
       Description = arrangement.Description;
-      ArrangementType = arrangement.ArrangementType;
+      ArrangementTypeId = arrangement.ArrangementTypeId;
+      //TransporationTypeIds = new List<int>();
+      //ServiceIds = new List<int>();
       StayDays = arrangement.StayDays;
       StayNights = arrangement.StayNights;
       Price = arrangement.Price;

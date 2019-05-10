@@ -1,0 +1,32 @@
+﻿@model IEnumerable<UTA.Models.ArrangementTransportationType>
+
+@{
+  ViewBag.Title = "Tabela Aranžmani - Vrste Prevoza";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Tabela Aranžmani - Vrste Prevoza</h2>
+
+@Html.ActionLink("Novi aranžman - vrsta prevoza", "New", "ArrangementTransportationTypeTable", new { area = "" }, new { @class = "btn btn-primary m-2" })
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Id aranžmana</th>
+      <th scope="col">Id vrste prevoza</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var arrangementTransportationType in Model)
+    {
+    <tr>
+      <th scope="row">@arrangementTransportationType.Id</th>
+      <td>@Html.ActionLink(arrangementTransportationType.ArrangementId.ToString(), "Edit", "ArrangementTable", new { area = "", id = arrangementTransportationType.ArrangementId }, new { @class = "btn btn-primary" })</td>
+      <td>@Html.ActionLink(arrangementTransportationType.TransportationTypeId.ToString(), "Edit", "TransportationTypeTable", new { area = "", id = arrangementTransportationType.TransportationTypeId }, new { @class = "btn btn-primary" })</td>
+      <td>@Html.ActionLink("Uredi", "Edit", "ArrangementTransportationTypeTable", new { area = "", id = arrangementTransportationType.Id }, new { @class = "btn btn-primary" })</td>
+      <td>@Html.ActionLink("Obriši", "Delete", "ArrangementTransportationTypeTable", new { area = "", id = arrangementTransportationType.Id }, new { @class = "btn btn-primary" })</td>
+    </tr>
+    }
+  </tbody>
+</table>

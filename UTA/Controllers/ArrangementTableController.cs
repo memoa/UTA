@@ -33,11 +33,11 @@ namespace UTA.Controllers
       var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
       var arrangementServices = _context.ArrangementServices.ToList();
 
-      var arrangementVMs = new List<ArrangementTableFormViewModel>();
+      var arrangementVMs = new List<ArrangementViewModel>();
 
       foreach (var arrangement in arrangements)
       {
-        var arrangementVM = new ArrangementTableFormViewModel(arrangement)
+        var arrangementVM = new ArrangementViewModel(arrangement)
         {
           TransportationTypes = arrangementTransportationTypes
             .Where(art => art.ArrangementId == arrangement.Id)
@@ -56,20 +56,22 @@ namespace UTA.Controllers
     {
       var arrangement = new Arrangement();
 
-      var transportationTypes = _context.TransportationTypes.ToList();
-      var services = _context.Services.ToList();
-
       var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
       var arrangementServices = _context.ArrangementServices.ToList();
 
       var arrangementVM = new ArrangementTableFormViewModel(arrangement)
       {
-        TransportationTypes = arrangementTransportationTypes
+        Agencies = _context.Agencies.ToList(),
+        Destinations = _context.Destinations.ToList(),
+        ArrangementTypes = _context.ArrangementTypes.ToList(),
+        TransportationTypes = _context.TransportationTypes.ToList(),
+        Services = _context.Services.ToList(),
+        TransporationTypeIds = arrangementTransportationTypes
           .Where(art => art.ArrangementId == arrangement.Id)
-          .Select(art => transportationTypes.SingleOrDefault(t => t.Id == art.TransportationTypeId)).ToList(),
-        Services = arrangementServices
+          .Select(art => art.TransportationTypeId).ToList(),
+        ServiceIds = arrangementServices
           .Where(ars => ars.ArrangementId == arrangement.Id)
-          .Select(ars => services.SingleOrDefault(s => s.Id == ars.ServiceId)).ToList()
+          .Select(ars => ars.ServiceId).ToList()
       };
 
       return View("ArrangementTableForm", arrangementVM);
@@ -82,21 +84,24 @@ namespace UTA.Controllers
       if (arrangement == null)
         return HttpNotFound();
 
-      var transportationTypes = _context.TransportationTypes.ToList();
-      var services = _context.Services.ToList();
-
       var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
       var arrangementServices = _context.ArrangementServices.ToList();
 
       var arrangementVM = new ArrangementTableFormViewModel(arrangement)
       {
-        TransportationTypes = arrangementTransportationTypes
+        Agencies = _context.Agencies.ToList(),
+        Destinations = _context.Destinations.ToList(),
+        ArrangementTypes = _context.ArrangementTypes.ToList(),
+        TransportationTypes = _context.TransportationTypes.ToList(),
+        Services = _context.Services.ToList(),
+        TransporationTypeIds = arrangementTransportationTypes
           .Where(art => art.ArrangementId == arrangement.Id)
-          .Select(art => transportationTypes.SingleOrDefault(t => t.Id == art.TransportationTypeId)).ToList(),
-        Services = arrangementServices
+          .Select(art => art.TransportationTypeId).ToList(),
+        ServiceIds = arrangementServices
           .Where(ars => ars.ArrangementId == arrangement.Id)
-          .Select(ars => services.SingleOrDefault(s => s.Id == ars.ServiceId)).ToList()
+          .Select(ars => ars.ServiceId).ToList()
       };
+
 
       return View("ArrangementTableForm", arrangementVM);
     }

@@ -1,7 +1,7 @@
 ﻿@model UTA.ViewModels.ArrangementViewModel
 
 @{
-    ViewBag.Title = Model.StayDays;
+    ViewBag.Title = Model.Destination.Place;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -24,25 +24,25 @@
       </div>
     </div>
     <div class="row no-gutters container m-2">
-      <div class="col text-center">
+      <div class="col text-center m-1">
         <h6>Tip aranžmana</h6>
-        <p>@Model.ArrangementType.Name</p>
+        <p class="list-group-item">@Model.ArrangementType.Name</p>
       </div>
-      <div class="col text-center">
+      <div class="col text-center m-1">
         <h6>Usluga</h6>
-        <ul>
+        <ul class="list-group">
           @foreach (var service in Model.Services)
           {
-            <li><p>@service.Name</p></li>
+            <li class="list-group-item">@service.Name</li>
           }
         </ul>
       </div>
-      <div class="col text-center">
+      <div class="col text-center m-1">
         <h6>Prevoz</h6>
-        <ul>
+        <ul class="list-group">
           @foreach(var transportationType in Model.TransportationTypes)
           {
-            <li><p>@transportationType.Name</p></li>
+            <li class="list-group-item">@transportationType.Name</li>
           }
         </ul>
       </div>

@@ -30,14 +30,22 @@
     @Html.ValidationMessageFor(a => a.ArrangementTypeId)
   </div>
   <div class="form-group">
-    @Html.LabelFor(a => a.TransportationTypeIds)
-    @Html.DropDownListFor(a => a.TransportationTypeIds, new SelectList(Model.TransportationTypes, "Id", "Id"), "Izaberite Id prevoza", new { @class = "form-control" })
-    @Html.ValidationMessageFor(a => a.TransportationTypeIds)
+    <p>Tipovi prevoza</p>
+    <ul class="list-group">
+      @foreach (var transportationType in Model.TransportationTypes)
+      {
+        <ul class="list-group-item">@transportationType.Id</ul>
+      }
+    </ul>
   </div>
   <div class="form-group">
-    @Html.LabelFor(a => a.ServiceIds)
-    @Html.DropDownListFor(a => a.ServiceIds, new SelectList(Model.Services, "Id", "Id"), "Izaberite Id usluge", new { @class = "form-control" })
-    @Html.ValidationMessageFor(a => a.ServiceIds)
+    <p>Usluge</p>
+    <ul class="list-group">
+      @foreach (var service in Model.Services)
+      {
+        <ul class="list-group-item">@service.Id</ul>
+      }
+    </ul>
   </div>
   <div class="form-group">
     @Html.LabelFor(a => a.StayDays)

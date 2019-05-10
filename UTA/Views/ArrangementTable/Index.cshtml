@@ -1,4 +1,4 @@
-﻿@model IEnumerable<UTA.ViewModels.ArrangementTableFormViewModel>
+﻿@model IEnumerable<UTA.ViewModels.ArrangementViewModel>
 
 @{
   ViewBag.Title = "Tabela Aranžmani";
@@ -17,8 +17,8 @@
       <th scope="col">Id destinacije</th>
       <th scope="col">Opis aranžmana</th>
       <th scope="col">Id tipa aranžmana</th>
-      <th scope="col">Id prevoza</th>
-      <th scope="col">Id usluge</th>
+      <th scope="col" class="text-light bg-secondary">Id prevoza</th>
+      <th scope="col" class="text-light bg-secondary">Id usluge</th>
       <th scope="col">Broj dana</th>
       <th scope="col">Broj noćenja</th>
       <th scope="col">Cena</th>
@@ -33,16 +33,16 @@
       <td>@Html.ActionLink(arrangement.Destination.Id.ToString(), "Edit", "DestinationTable", new { area = "", id = arrangement.Destination.Id }, new { @class = "btn btn-primary" })</td>
       <td>@arrangement.Description.Substring(0, 50) ...</td>
       <td>@Html.ActionLink(arrangement.ArrangementType.Id.ToString(), "Edit", "ArrangementTypeTable", new { area = "", id = arrangement.ArrangementType.Id }, new { @class = "btn btn-primary" })</td>
-      <td>
+      <td class="bg-secondary">
         @foreach (var transportationType in arrangement.TransportationTypes)
         {
-          @Html.ActionLink(transportationType.Id.ToString(), "Edit", "TransportationTypeTable", new { area = "", id = transportationType.Id }, new { @class = "btn btn-primary mb-2" })
+          @Html.ActionLink(transportationType.Id.ToString(), "Edit", "TransportationTypeTable", new { area = "", id = transportationType.Id }, new { @class = "btn btn-light mb-2" })
         }
       </td>
-      <td>
+      <td class="bg-secondary">
         @foreach (var service in arrangement.Services)
         {
-          @Html.ActionLink(service.Id.ToString(), "Edit", "ServiceTable", new { area = "", id = service.Id }, new { @class = "btn btn-primary mb-2" })
+          @Html.ActionLink(service.Id.ToString(), "Edit", "ServiceTable", new { area = "", id = service.Id }, new { @class = "btn btn-light mb-2" })
         }
       </td>
       <td>@arrangement.StayDays</td>

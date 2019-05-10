@@ -1,0 +1,29 @@
+﻿@model UTA.ViewModels.ArrangementTransportationTypeTableFormViewModel
+
+@{
+  ViewBag.Title = "Uredi Aranžman - Vrstu Prevoza";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="m-2">Uredi Aranžman - Vrstu Prevoza</h2>
+
+@using (Html.BeginForm("Save", "ArrangementTransportationTypeTable"))
+{
+  <div class="form-group">
+    @Html.LabelFor(a => a.ArrangementId)
+    @Html.DropDownListFor(a => a.ArrangementId, new SelectList(Model.Arrangements, "Id", "Id"), "Izaberite Id aranžmana", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.ArrangementId)
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(a => a.TransportationTypeId)
+    @Html.DropDownListFor(a => a.TransportationTypeId, new SelectList(Model.TransportationTypes, "Id", "Id"), "Izaberite Id vrste prevoza", new { @class = "form-control" })
+    @Html.ValidationMessageFor(a => a.TransportationTypeId)
+  </div>
+  @Html.HiddenFor(d => d.Id)
+  @Html.AntiForgeryToken()
+  <button type="submit" class="btn btn-primary">Sačuvaj</button>
+}
+
+@section scripts {
+  @Scripts.Render("~/Bundles/jqueryval")
+}
