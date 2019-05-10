@@ -8,6 +8,7 @@ using UTA.ViewModels;
 
 namespace UTA.Controllers
 {
+  [Authorize]
   public class ArrangementTransportationTypeTableController : Controller
   {
     private ApplicationDbContext _context;

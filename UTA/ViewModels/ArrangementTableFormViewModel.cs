@@ -63,8 +63,6 @@ namespace UTA.ViewModels
       DestinationId = arrangement.DestinationId;
       Description = arrangement.Description;
       ArrangementTypeId = arrangement.ArrangementTypeId;
-      //TransporationTypeIds = new List<int>();
-      //ServiceIds = new List<int>();
       StayDays = arrangement.StayDays;
       StayNights = arrangement.StayNights;
       Price = arrangement.Price;
