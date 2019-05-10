@@ -12,8 +12,7 @@ namespace UTA.ViewModels
     public IEnumerable<Agency> Agencies { get; set; }
     public IEnumerable<Destination> Destinations { get; set; }
     public IEnumerable<ArrangementType> ArrangementTypes { get; set; }
-    public IEnumerable<TransportationType> TransportationTypes { get; set; }
-    public IEnumerable<Service> Services { get; set; }
+
     public int Id { get; set; }
 
     [Required(ErrorMessage = "Ovo polje je obavezno!")]
@@ -31,10 +30,6 @@ namespace UTA.ViewModels
     [Required(ErrorMessage = "Ovo polje je obavezno!")]
     [Display(Name = "Tip aranžmana")]
     public int ArrangementTypeId { get; set; }
-
-    public IEnumerable<int> TransporationTypeIds { get; set; }
-
-    public IEnumerable<int> ServiceIds { get; set; }
 
     [Required(ErrorMessage = "Ovo polje je obavezno!")]
     [Range(1, 30, ErrorMessage = "Unesite broj između 1 i 30!")]

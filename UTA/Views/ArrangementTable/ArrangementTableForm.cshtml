@@ -30,24 +30,6 @@
     @Html.ValidationMessageFor(a => a.ArrangementTypeId)
   </div>
   <div class="form-group">
-    <p>Tipovi prevoza</p>
-    <ul class="list-group">
-      @foreach (var transportationType in Model.TransportationTypes)
-      {
-        <ul class="list-group-item">@transportationType.Id</ul>
-      }
-    </ul>
-  </div>
-  <div class="form-group">
-    <p>Usluge</p>
-    <ul class="list-group">
-      @foreach (var service in Model.Services)
-      {
-        <ul class="list-group-item">@service.Id</ul>
-      }
-    </ul>
-  </div>
-  <div class="form-group">
     @Html.LabelFor(a => a.StayDays)
     @Html.TextBoxFor(a => a.StayDays, "", new { @class = "form-control" })
     @Html.ValidationMessageFor(a => a.StayDays)

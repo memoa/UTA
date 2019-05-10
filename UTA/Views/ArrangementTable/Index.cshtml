@@ -31,7 +31,7 @@
       <th scope="row">@arrangement.Id</th>
       <td>@Html.ActionLink(arrangement.Agency.Id.ToString(), "Edit", "AgencyTable", new { area = "", id = arrangement.Agency.Id }, new { @class = "btn btn-primary" })</td>
       <td>@Html.ActionLink(arrangement.Destination.Id.ToString(), "Edit", "DestinationTable", new { area = "", id = arrangement.Destination.Id }, new { @class = "btn btn-primary" })</td>
-      <td>@arrangement.Description.Substring(0, 50) ...</td>
+      <td>@(arrangement.Description.Length < 50 ? arrangement.Description : arrangement.Description.Substring(0, 50) + " ...")</td>
       <td>@Html.ActionLink(arrangement.ArrangementType.Id.ToString(), "Edit", "ArrangementTypeTable", new { area = "", id = arrangement.ArrangementType.Id }, new { @class = "btn btn-primary" })</td>
       <td class="bg-secondary">
         @foreach (var transportationType in arrangement.TransportationTypes)

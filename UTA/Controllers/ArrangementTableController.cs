@@ -56,22 +56,11 @@ namespace UTA.Controllers
     {
       var arrangement = new Arrangement();
 
-      var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
-      var arrangementServices = _context.ArrangementServices.ToList();
-
       var arrangementVM = new ArrangementTableFormViewModel(arrangement)
       {
         Agencies = _context.Agencies.ToList(),
         Destinations = _context.Destinations.ToList(),
-        ArrangementTypes = _context.ArrangementTypes.ToList(),
-        TransportationTypes = _context.TransportationTypes.ToList(),
-        Services = _context.Services.ToList(),
-        TransporationTypeIds = arrangementTransportationTypes
-          .Where(art => art.ArrangementId == arrangement.Id)
-          .Select(art => art.TransportationTypeId).ToList(),
-        ServiceIds = arrangementServices
-          .Where(ars => ars.ArrangementId == arrangement.Id)
-          .Select(ars => ars.ServiceId).ToList()
+        ArrangementTypes = _context.ArrangementTypes.ToList()
       };
 
       return View("ArrangementTableForm", arrangementVM);
@@ -84,22 +73,11 @@ namespace UTA.Controllers
       if (arrangement == null)
         return HttpNotFound();
 
-      var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
-      var arrangementServices = _context.ArrangementServices.ToList();
-
       var arrangementVM = new ArrangementTableFormViewModel(arrangement)
       {
         Agencies = _context.Agencies.ToList(),
         Destinations = _context.Destinations.ToList(),
         ArrangementTypes = _context.ArrangementTypes.ToList(),
-        TransportationTypes = _context.TransportationTypes.ToList(),
-        Services = _context.Services.ToList(),
-        TransporationTypeIds = arrangementTransportationTypes
-          .Where(art => art.ArrangementId == arrangement.Id)
-          .Select(art => art.TransportationTypeId).ToList(),
-        ServiceIds = arrangementServices
-          .Where(ars => ars.ArrangementId == arrangement.Id)
-          .Select(ars => ars.ServiceId).ToList()
       };
 
 
@@ -108,42 +86,37 @@ namespace UTA.Controllers
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public ActionResult Save(Arrangement arrangement)
+    public ActionResult Save(ArrangementTableFormViewModel arrangementVM)
     {
       if (!ModelState.IsValid)
+        return View("ArrangementTableForm", arrangementVM);
+
+      if (arrangementVM.Id == 0)
       {
-        var transportationTypes = _context.TransportationTypes.ToList();
-        var services = _context.Services.ToList();
-
-        var arrangementTransportationTypes = _context.ArrangementTransportationTypes.ToList();
-        var arrangementServices = _context.ArrangementServices.ToList();
-
-        var arrangementVM = new ArrangementTableFormViewModel(arrangement)
+        var arrangement = new Arrangement
         {
-          TransportationTypes = arrangementTransportationTypes
-            .Where(art => art.ArrangementId == arrangement.Id)
-            .Select(art => transportationTypes.SingleOrDefault(t => t.Id == art.TransportationTypeId)).ToList(),
-          Services = arrangementServices
-            .Where(ars => ars.ArrangementId == arrangement.Id)
-            .Select(ars => services.SingleOrDefault(s => s.Id == ars.ServiceId)).ToList()
+          AgencyId = arrangementVM.AgencyId,
+          DestinationId = arrangementVM.DestinationId,
+          Description = arrangementVM.Description,
+          ArrangementTypeId = arrangementVM.ArrangementTypeId,
+          StayDays = arrangementVM.StayDays,
+          StayNights = arrangementVM.StayNights,
+          Price = arrangementVM.Price
         };
 
-        return View("ArrangementTableForm", arrangementVM);
-      }
-
-      if (arrangement.Id == 0)
         _context.Arrangements.Add(arrangement);
+      }
       else
       {
-        var arrangementInDb = _context.Arrangements.Single(a => a.Id == arrangement.Id);
+        var arrangementInDb = _context.Arrangements.Single(a => a.Id == arrangementVM.Id);
 
-        arrangementInDb.AgencyId = arrangement.AgencyId;
-        arrangementInDb.DestinationId = arrangement.DestinationId;
-        arrangementInDb.Description = arrangement.Description;
-        arrangementInDb.ArrangementTypeId = arrangement.ArrangementTypeId;
-        arrangementInDb.StayDays = arrangement.StayDays;
-        arrangementInDb.StayNights = arrangement.StayNights;
-        arrangementInDb.Price = arrangement.Price;
+        arrangementInDb.AgencyId = arrangementVM.AgencyId;
+        arrangementInDb.DestinationId = arrangementVM.DestinationId;
+        arrangementInDb.Description = arrangementVM.Description;
+        arrangementInDb.ArrangementTypeId = arrangementVM.ArrangementTypeId;
+        arrangementInDb.StayDays = arrangementVM.StayDays;
+        arrangementInDb.StayNights = arrangementVM.StayNights;
+        arrangementInDb.Price = arrangementVM.Price;
       }
       _context.SaveChanges();
 
