@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.Designer.cs">
       <DependentUpon>201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905100610199_SeedTables.cs" />
+    <Compile Include="Migrations\201905100610199_SeedTables.Designer.cs">
+      <DependentUpon>201905100610199_SeedTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Agency.cs" />
@@ -335,7 +339,8 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="UTA database.sql" />
+    <Content Include="UTASeed.sql" />
+    <Content Include="UTACreateTables.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -459,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.resx">
       <DependentUpon>201905081754319_AddArrangementsTransportationTypesAndArrangementsServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905100610199_SeedTables.resx">
+      <DependentUpon>201905100610199_SeedTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
