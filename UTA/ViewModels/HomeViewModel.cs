@@ -6,7 +6,7 @@ using UTA.Models;
 
 namespace UTA.ViewModels {
   public class HomeViewModel {
-    public List<AgencyViewModel> Agencies;
+    public List<Agency> Agencies;
     public List<Arrangement> Arrangements;
   }
 }

@@ -18,19 +18,7 @@ namespace UTA.Controllers {
     public ActionResult Index() {
       var agencies = _context.Agencies.ToList();
 
-      var agenciesVm = new List<AgencyViewModel>();
-
-      foreach (var agency in agencies) {
-        var agencyVm = new AgencyViewModel {
-          Id = agency.Id,
-          Name = agency.Name,
-          Logo = agency.Logo
-        };
-
-        agenciesVm.Add(agencyVm);
-      }
-
-      return View(agenciesVm);
+      return View(agencies);
     }
 
     public ActionResult Details(int id) {

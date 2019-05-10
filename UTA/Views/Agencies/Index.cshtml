@@ -1,4 +1,4 @@
-﻿@model IEnumerable<UTA.ViewModels.AgencyViewModel>
+﻿@model IEnumerable<UTA.Models.Agency>
 
 @{
   ViewBag.Title = "Turističke Agencije";
@@ -12,7 +12,6 @@
       <img src="~/Content/Logos/@agency.Logo" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">@agency.Name</h5>
-        <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
         @Html.ActionLink("Detalji", "Details", new { id = agency.Id }, new { @class = "btn btn-primary" })
       </div>
     </div>

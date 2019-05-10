@@ -21,31 +21,11 @@ namespace UTA.Controllers {
         .Include(a => a.Destination)
         .Include(a => a.Agency).ToList();
 
-      HomeViewModel homeVm = new HomeViewModel {
-        Agencies = new List<AgencyViewModel>(),
+      var homeVm = new HomeViewModel {
+        Agencies = agencies,
         Arrangements = arrangements
       };
 
-      foreach (var agency in agencies) {
-        var agencyVm = new AgencyViewModel {
-          Id = agency.Id,
-          Name = agency.Name,
-          Logo = agency.Logo
-        };
-
-        homeVm.Agencies.Add(agencyVm);
-      }
-      /*
-      foreach (var arrangement in arrangements) {
-        var arrangementVm = new ArrangementViewModel {
-          Id = arrangement.Id,
-          Destination = arrangement.Destination,
-          Picture = arrangement.Picture
-        };
-
-        homeVm.Arrangements.Add(arrangementVm);
-      }
-      */
       return View(homeVm);
     }
 
